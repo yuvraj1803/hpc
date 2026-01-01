@@ -1,12 +1,28 @@
 #include "timer.h"
 #include <stdio.h>
 
+double time_begin;
+double time_end;
+
+void input() {
+
+}
+
+void output() {
+	printf("time: %f\n", (time_end - time_begin));
+}
+
+void compute() {
+
+}
+
 int main() {
 	
-	double time_begin = hpc_now();
+	input();
 
-	
-	double time_end = hpc_now();
-	printf("time: %f\n", (time_end - time_begin));
+	time_begin = hpc_now();
+	compute();
+	time_end = hpc_now();
 
+	output();
 }
