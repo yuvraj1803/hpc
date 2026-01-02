@@ -51,7 +51,7 @@ void *worker(void *arg) {
 		for(int j = 0; j < out->c; j++) {
 			float sum = 0.0;
 			for(int kr = 0; kr < kernel->r; kr++) {
-				for(int kc = 0; kc + 3 < kernel->c; kc += 3) {
+				for(int kc = 0; kc + 3 < kernel->c; kc += 4) {
 					sum += grid->data[(i + kr) * grid->c + (j + kc)] * kernel->data[kr * kernel->c + kc];
 					sum += grid->data[(i + kr) * grid->c + (j + kc + 1)] * kernel->data[kr * kernel->c + kc + 1];
 					sum += grid->data[(i + kr) * grid->c + (j + kc + 2)] * kernel->data[kr * kernel->c + kc + 2];
