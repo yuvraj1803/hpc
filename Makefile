@@ -1,5 +1,5 @@
 CC ?= clang
-CFLAGS ?= -Wall -O0 -I./tools
+CFLAGS ?= -Wall -O0 -I./tools -mcpu=apple-m2 -DACCELERATE_NEW_LAPACK -DACCELERATE_LAPACK_ILP64 -framework Accelerate
 
 SRC_DIRS := src stress
 OUT_DIR  := out
